@@ -2,7 +2,7 @@
     import { parse } from "marked";
     import { github, contact } from "./config.js";
 
-    let isLoaded = false;
+    let isLoaded = true;
     let statusList = [];
 
     $: if (isLoaded === true) {
@@ -46,9 +46,19 @@
 <section class="section">
     <div class="container">
         <h1 class="title is-1">서버 상태</h1>
-        <p class="subtitle">
-            서버와 관련된 알려진 문제들을 확인할 수 있습니다.
-        </p>
+        <p class="subtitle">알려진 문제점들을 확인할 수 있습니다.</p>
+
+        <div class="block">
+            {#if contact.email.length != 0}
+                <a class="button is-link" href="mailto:{contact.email}"
+                    >이메일</a>
+            {/if}
+            {#if contact.chat.length != 0}
+                <a class="button is-link" href="{contact.chat}" target="_href"
+                    >채팅</a>
+            {/if}
+        </div>
+
         {#if isLoaded === false}
             <div class="notification is-link is-light">
                 <p>서버 정보를 불러오고 있습니다.</p>
@@ -56,21 +66,8 @@
         {/if}
 
         {#if statusList.length == 0 && isLoaded === true}
-            <div class="notification is-primary is-light">
-                <div class="content">
-                    <p>알려진 문제가 없습니다!</p>
-                    <p>문제가 있다면 아래의 연락처를 통해 연락해주세요.</p>
-                </div>
-                {#if contact.email.length != 0}
-                    <a class="button is-primary" href="mailto:{contact.email}"
-                        >이메일</a>
-                {/if}
-                {#if contact.chat.length != 0}
-                    <a
-                        class="button is-primary"
-                        href="{contact.chat}"
-                        target="_href">채팅</a>
-                {/if}
+            <div class="notification is-link is-light">
+                <p>알려진 문제가 없습니다!</p>
             </div>
         {/if}
 
