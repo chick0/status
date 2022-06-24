@@ -1,9 +1,13 @@
 import preprocess from "svelte-preprocess";
 
-export default {
+const config = {
     preprocess: [
         preprocess({
-            postcss: true,
+            scss: {
+                prependData: '@use "src/variables.scss" as *;',
+            },
         }),
     ],
 };
+
+export default config;

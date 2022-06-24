@@ -1,5 +1,14 @@
-<script>
-    import "./app.css";
-</script>
+<section class="section">
+    <div class="container">
+        <h1 class="title is-1">Status</h1>
+        <p class="subtitle">서버 상태</p>
+    </div>
+</section>
 
-<h1 class="text-3xl font-bold underline">Hello world!</h1>
+<section class="section">
+    <div class="container">
+        <div class="box">
+            <h5 class="titls is-5">서버이름</h5>
+        </div>
+    </div>
+</section>
