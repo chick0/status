@@ -84,10 +84,6 @@
                     {/each}
                 </div>
                 <div class="content is-medium">{@html parse(status.body)}</div>
-                <a
-                    class="button is-link is-medium is-fullwidth"
-                    href="{status.html_url}"
-                    target="_blank">자세한 정보 확인하기</a>
             </div>
         {/each}
     </div>
