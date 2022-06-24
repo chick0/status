@@ -2,7 +2,7 @@
     import { parse } from "marked";
     import { github, contact } from "./config.js";
 
-    let isLoaded = true;
+    let isLoaded = false;
     let statusList = [];
 
     $: if (isLoaded === true) {
