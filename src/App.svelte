@@ -80,9 +80,12 @@
                 <div class="tags">
                     {#each status.labels as label}
                         <span
-                            class="tag label is-medium"
+                            class="tag label is-medium tooltip"
                             style="background-color: #{label.color}; color: #;">
                             {label.name}
+                            <span class="tooltip-text">
+                                {label.description}
+                            </span>
                         </span>
                     {/each}
                 </div>
