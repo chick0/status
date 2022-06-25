@@ -74,7 +74,7 @@
         {#each statusList as status}
             <div class="box">
                 <h3 class="title is-3">{status.title}</h3>
-                <div class="subtitle">
+                <div class="subtitle tags">
                     {#each status.labels as label}
                         <span
                             class="tag label is-medium"
