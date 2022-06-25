@@ -43,7 +43,7 @@
         });
 </script>
 
-<section class="section">
+<section class="section mb-6">
     <div class="container">
         <h1 class="title is-1">서버 상태</h1>
         <p class="subtitle">알려진 문제점들을 확인할 수 있습니다.</p>
@@ -88,5 +88,3 @@
         {/each}
     </div>
 </section>
-
-<section class="section"></section>
