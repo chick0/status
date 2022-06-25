@@ -36,6 +36,8 @@
         .then((resp) => resp.json())
         .then((json) => {
             statusList = json.filter((e) => {
+                let date = new Date(e.created_at);
+                e.parsedDate = date.toLocaleString();
                 return github.user_id.includes(e.user.login);
             });
 
@@ -74,7 +76,8 @@
         {#each statusList as status}
             <div class="box">
                 <h3 class="title is-3">{status.title}</h3>
-                <div class="subtitle tags">
+                <p class="subtitle mb-1">{status.parsedDate}</p>
+                <div class="tags">
                     {#each status.labels as label}
                         <span
                             class="tag label is-medium"
