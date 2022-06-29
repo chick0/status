@@ -52,12 +52,9 @@
 
         <div class="block">
             {#if contact.email.length != 0}
-                <a class="button is-link" href="mailto:{contact.email}"
-                    >이메일</a>
-            {/if}
-            {#if contact.chat.length != 0}
-                <a class="button is-link" href="{contact.chat}" target="_href"
-                    >채팅</a>
+                <a
+                    class="button is-primary is-medium"
+                    href="mailto:{contact.email}">이메일</a>
             {/if}
         </div>
 
@@ -68,7 +65,7 @@
         {/if}
 
         {#if statusList.length == 0 && isLoaded === true}
-            <div class="notification is-link is-light">
+            <div class="notification is-success is-light">
                 <p>알려진 문제가 없습니다!</p>
             </div>
         {/if}

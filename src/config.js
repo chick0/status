@@ -5,5 +5,4 @@ export const github = {
 
 export const contact = {
     email: "chick_0@ch1ck.xyz",
-    chat: "https://chick-0.channel.io/lounge",
 };
