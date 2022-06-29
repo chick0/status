@@ -78,7 +78,10 @@
                     {#each status.labels as label}
                         <span
                             class="tag label is-medium tooltip"
-                            style="background-color: #{label.color}; color: #;">
+                            style="background-color: #{label.color}; color: #;"
+                            on:click="{() => {
+                                alert(label.description);
+                            }}">
                             {label.name}
                             <span class="tooltip-text">
                                 {label.description}
